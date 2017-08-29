@@ -1,0 +1,27 @@
+FORMAT: 1A
+
+# Find Needles
+
+FindNeedles API documentation.
+This API returns the occurrence of needles in the haystack
+A needles is a list of words to be found in the haystack.
+A haystack is a sentence or phrase
+
+# Group Find Needles
+
+### Find Needles [GET /findNeedles?haystack=&needles=]
+This endpoint returns the occurrence of a needle in the haystack
++ Request
+
+        {
+                "haystack": "the dog ate the cat's food",
+                "needles": {"the", "dog", "puppy" }
+        }
+
++ Response 200 (application/json)
+
+        {
+                "the": 2,
+                "dog": 1,
+                "puppy": 0
+        }
